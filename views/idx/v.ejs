@@ -1,0 +1,13 @@
+<p>V</p>
+
+<div class="row tc">
+    <% penyakits.forEach((penyakit) => { %>
+    <% let name = [] %>
+    <% if (penyakit.name[0] === 'V') name.push(penyakit.name) %>
+    <div class="col-4">
+        <li class="list-group list-group-flush">
+            <a href='idx/<%= penyakit.name.substring(0,1)%>/<%=penyakit._id%>'><%= name %></a>
+        </li>
+    </div>
+    <% }) %>
+</div>

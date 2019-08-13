@@ -1,0 +1,35 @@
+{
+  "name": "skripsi-api",
+  "version": "1.0.0",
+  "description": "skripsi-api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.3.1",
+    "cloudinary": "^1.14.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.0.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "express-session": "^1.16.2",
+    "jsdom": "^15.1.1",
+    "method-override": "^3.0.0",
+    "moment": "^2.24.0",
+    "mongoose": "^5.6.7",
+    "multer": "^1.4.2",
+    "node-geocoder": "^3.23.0",
+    "nodemon": "^1.19.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^5.0.1",
+    "quill": "^1.3.6",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
+    "tachyons": "^4.11.1"
+  }
+}

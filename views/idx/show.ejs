@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+
+
+<div class="ui main text container">
+        <img class='img-responsive' src='<%= penyakit.image %>'>
+    <h1 class="ui header"><%= penyakit.name %></h1>
+</div>
+
+<div class="ui text container">
+    <% var desc = penyakit.description.split('\n') %>
+    <% desc.forEach((paragraph) => { %>
+    <p><%= paragraph %></p>
+    <% }) %>
+</div>
+
+<% include ../partials/footer %>

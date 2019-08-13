@@ -1,0 +1,115 @@
+<% include ../partials/header %>
+
+<div class="wrapper mt-3">
+    <div class="page-header clear-filter page-header-small" filter-color="orange">
+        <div class="page-header-image" data-parallax="true" style="background-image:url('../assets/img/bg5.jpg');">
+        </div>
+        <div class="container">
+            <div class="photo-container">
+                <img src="<%= user.avatar %>" alt="..." class="img-thumbnail profile-pic">
+            </div>
+            <h3 class="title"><%- user.fullName %></h3>
+            <% if(currentUser._id.equals(user.id)) { %>
+            <a class='btn btn-warning' href='/users/<%= user._id %>/edit'>Edit</a>
+            <% } %>
+            <p class="category"><%- user.spesialisasi %></p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="container">
+            <h3 class="title">About <%- user.fullName %></h3>
+            <h5 class="description">
+                <%- user.bio %>
+            </h5>
+            <div class="row">
+                <div class="col-md-6 ml-auto mr-auto">
+                    <h4 class="title text-center"><%- user.username %>'s Portfolio</h4>
+                    <ul>
+                        <% articles.forEach((article) => { %>
+                        <li>
+                            <a href='/articles/<%= article.id %>'><%- article.name %></a>
+                        </li>
+                        <% }) %>
+                    </ul>
+
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content gallery">
+                    <div class="tab-pane active" id="home" role="tabpanel">
+                        <div class="col-md-10 ml-auto mr-auto">
+                            <div class="row collections">
+                                <div class="col-md-6">
+
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="profile" role="tabpanel">
+                        <div class="col-md-10 ml-auto mr-auto">
+                            <div class="row collections">
+                                <div class="col-md-6">
+                                    <img src="../assets/img/bg6.jpg" class="img-raised">
+                                    <img src="../assets/img/bg11.jpg" alt="" class="img-raised">
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="messages" role="tabpanel">
+                        <div class="col-md-10 ml-auto mr-auto">
+                            <div class="row collections">
+                                <div class="col-md-6">
+                                    <img src="../assets/img/bg3.jpg" alt="" class="img-raised">
+                                    <img src="../assets/img/bg8.jpg" alt="" class="img-raised">
+                                </div>
+                                <div class="col-md-6">
+                                    <img src="../assets/img/bg7.jpg" alt="" class="img-raised">
+                                    <img src="../assets/img/bg6.jpg" class="img-raised">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <article class="cf ph3 ph5-ns pv5">
+    <header class="fn fl-ns w-50-ns pr4-ns">
+        <img src="<%= user.avatar %>" class="br-100 pa1 ba b--black-10 profilepic" alt="avatar">
+        <h1 class="mb3 mt0 lh-title"><%= user.fullName %></h1>
+        <time class="f6 ttu tracked gray"><%= user.spesialisasi %></time>
+    </header>
+    <div class="fn fl-ns w-50-ns">
+        <p class="lh-copy measure mt4 mt0-ns">
+            PERFECT typography is more a science than an art. Mastery of the trade is
+            indispensable, but it isn't everything. Unerring taste, the hallmark of
+            perfection, rests also upon a clear understanding of the laws of harmonious
+            design. As a rule, impeccable taste springs partly from inborn sensitivity:
+            from feeling. But feelings remain rather unproductive unless they can inspire a
+            secure judgment. Feelings have to mature into knowledge about the consequences
+            of formal decisions. For this reason, there are no born masters of typography,
+            but self- education may lead in time to mastery.
+        </p>
+        <p class="lh-copy measure">
+            It is wrong to say that there is no arguing about taste when it is good taste
+            that is in question. We are not born with good taste, nor do we come into this
+            world equipped with a real understanding of art. Merely to recognize who or
+            what is represented in a picture has little to do with a real under- standing
+            of art. Neither has an uninformed opinion about the proportions of Roman
+            letters. In any case, arguing is senseless. He who wants to convince has to
+            do a better job than others.
+        </p>
+    </div>
+</article> -->
+
+<% include ../partials/footer %>

@@ -1,0 +1,22 @@
+<% include ../partials/header %>
+<div class='container'>
+    <% users.forEach((user) => { %>
+    <div class="row justify-content-center">
+        <article class="dt w-40 bb b--black-05 pb2 mt2" href="#0">
+            <div class="dtc w2 w3-ns v-mid">
+                <img src="<%= user.avatar %>" class="ba b--black-10 db br2 w2 w3-ns h2 h3-ns" />
+            </div>
+            <div class="col-6 col-md-4">
+                <a href='/users/<%= user._id %>'>
+                    <div class="dtc v-mid pl3">
+                        <h1 class="f6 f5-ns fw6 lh-title black mv0"><%= user.fullName %></h1>
+                        <h2 class="f6 fw4 mt0 mb0 black-60"><%= user.spesialisasi %></h2>
+                    </div>
+                </a>
+            </div>
+        </article>
+    </div>
+    <% }) %>
+    <script async src="https://cdn.omnicalculator.com/sdk.js"></script>
+</div>
+<% include ../partials/footer %>

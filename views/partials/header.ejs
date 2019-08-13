@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Yourhealth</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js'></script>
+    <link rel="stylesheet" href="/stylesheets/chat.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4/css/tachyons.min.css">
+    <script
+        src="https://cdn.tiny.cloud/1/x25c0jtd4l8thufitx1ytgq36kqoedc7vdsp2yh3xxyywitb/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({ selector: 'textarea' });
+    </script>
+    <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-3">
+        <a class="navbar-brand" href="/">Yourhealth</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/konsultasi">Konsultasi<span class="sr-only">Konsultasi</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/idx">Index Kesehatan</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/events">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/kalkulator">Kalkulator</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users">Daftar Ahli</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color:#63f84e" href="/join">Bergabung sebagai ahli<span
+                            class="sr-only">Konsultasi</span></a>
+                </li>
+            </ul>
+
+            <ul class='navbar-nav ml-auto'>
+                <% if(!currentUser) {%>
+                <li class='nav-item'><a class='nav-link' href='/login'>Login</a></li>
+                <li class='nav-item'><a class='nav-link' href='/register'>Sign Up</a></li>
+                <% } else if(currentUser.isAdmin) { %>
+                <li><a class='nav-link' style="color: #63f84e" href='/dashboard/users'>Dashboard</a></li>
+                <li><a class='nav-link' style="color: #63f84e" href='/idx/new'>Add new Index</a></li>
+                <li><a class='nav-link' style="color: #63f84e" href='/events/new'>Add new Event</a></li>
+                <li><a class='nav-link' style="color: #63f84e" href='/articles/new'>Add new Article</a></li>
+                <li><a class='nav-link' href='/users/<%= currentUser._id %>'>Signed in As<%= currentUser.username %></a>
+                </li>
+                <li class='nav-item'><a class='nav-link' href='/logout'>Logout</a></li>
+                <% } else if(currentUser.isAhli){  %>
+                <li><a class='nav-link' style="color: #63f84e" href='/articles/new'>Add new Article</a></li>
+                <li><a class='nav-link' href='/users/<%= currentUser._id %>'>Signed in As
+                        <%= currentUser.username %></a></li>
+                <li class='nav-item'><a class='nav-link' href='/logout'>Logout</a></li>
+                <% } else { %>
+                <li><a class='nav-link' href='/users/<%= currentUser._id %>'>Signed in As
+                        <%= currentUser.username %></a></li>
+                <li class='nav-item'><a class='nav-link' href='/logout'>Logout</a></li>
+                <% } %>
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+            </form>
+        </div>
+    </nav>
+
+    <div class='container-fluid'>
+        <% if (error && error.length > 0) { %>
+        <div class="alert alert-danger" role="alert">
+            <%= error %>
+        </div>
+        <% } %>
+        <% if(success && success.length > 0) { %>
+        <div class="alert alert-success" role="alert">
+            <%= success %>
+        </div>
+        <% } %>
+    </div>

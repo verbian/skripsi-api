@@ -1,0 +1,66 @@
+<% include ../partials/header %>
+
+<div class='container'>
+    <div class="row vh-75 pv4">
+        <div class="col-4">
+            <div class="omni-calculator" data-calculator="health/bmi" data-width="300"
+                data-config='{"height":{"label":"Tinggi Badan","default":"0","help":"Input berat badan anda"},"mass":{"label":"Berat Badan","help":"Input berat badan anda","default":"0"},"category":{},"valueSelects":{"71":{"awesome! - your BMI is normal":{"name":"normal"},"overweight":{"name":"gemuk"},"obese":{"name":"obesitas"},"severely obese":{"name":"obesitas akut"},"underweight":{"name":"kurus"}}}}'
+                data-currency="IDR" data-show-row-controls="false" data-version="3" data-t="1565514353472">
+                <div class="omni-calculator-header">BMI Calculator - Body Mass Index</div>
+                <div class="omni-calculator-footer">
+                    <a href="https://www.omnicalculator.com/health/bmi" target="_blank"></a>
+                </div>
+            </div>
+            <script async src="https://cdn.omnicalculator.com/sdk.js"></script>
+        </div>
+        <div class="col-8 pt5">
+            <div>
+                <p class='f3 tj'>
+                    Kalkulator BMI adalah alat yang berguna yang mengukur apakah anda kelebihan berat badan, kekurangan berat badan, atau tepat.
+                    Berat badan anda saja tidak cukup, karena seorang pria tinggi
+                    dan kurus dapat dengan mudah menimbang lebih dari wanita yang pendek tapi gemuk. Indeks massa tubuh, atau 
+                    BMI, mengatasi masalah ini dengan menemukan rasio berat Anda dengan tinggi badan Anda, dan mengembalikan satu 
+                    angka. Angka ini akan masuk ke dalam kategori pada skala rentang BMI, yang didefinisikan sebagai berat badan rendah, normal, 
+                    kelebihan berat badan, dan obesitas.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row vh-75 pv4">
+        <div class="col-4">
+        </div>
+        <div class="col-8 pt5">
+            <p class='f3 tj'>Ada lima rentang dasar dalam skala BMI:</p>
+            <div class="ui bulleted list">
+                <div class="item f3">
+                    Underweight = kurang dari 18,5
+                </div>
+                <div class="item f3">
+                    Normal weight = 18,5 - 24,9
+                </div>
+                <div class="item f3">
+                    Overweight = 25 - 29,9
+                </div>
+                <div class="item f3">
+                    Obesity = 30 - 35
+                </div>
+                <div class="item f3">
+                    Severe obesity = 35 dan lebih banyak
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row vh-50 pv4">
+        <div class="col-4">
+        </div>
+        <div class="col-8 pt5">
+            <p class='f3 tj'>
+                Kalkulator BMI memudahkan Anda untuk menemukan nomor Anda. Namun, harap diingat bahwa BMI
+                adalah estimasi kasar. Hasilnya mungkin berbeda bagi individu yang aktif, atau bagi
+                mereka yang pasif sehingga mengambil massa otot sebagai pertimbangan.
+            </p>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

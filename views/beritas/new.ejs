@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+<div class='container-fluid center'>
+    <div class="rows">
+        <h1 style="text-align: center">Create a New Post</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/beritas" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Judul</label>
+                    <input class="form-control" type="text" name="berita[name]" placeholder="Judul">
+                </div>
+                <div class="form-group">
+                    <label for="image">Image</label>
+                    <br>
+                    <input type="file" id="image" name="image" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea class="form-control" type="text" name="berita[description]" rows="5" cols="70"
+                        placeholder="description"></textarea>
+                </div>
+                <%# <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="location" id="location" placeholder="Location">
+                </div> %>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Submit!</button>
+                </div>
+            </form>
+            <a href="/beritas">Go Back</a>
+        </div>
+    </div>
+    <!-- <div class='row justify-content-center'>
+        <div class='col-md-12 text-center'>
+            <h1>Create new Post</h1>
+        </div>
+        <div class='col-xs-12 col-md-6 col-lg-4'>
+            <form action="/articles" method="POST" enctype="multipart/form-data">
+                <div class='form-group'>
+                    <input class='form-control' type="text" name='name' placeholder='Name' />
+                </div>
+                <div class='form-group'>
+                    <label for='image'>Image</label>
+                    <input class='form-control' id='image' type="file" name='image' accept='image/*'
+                        placeholder='Image URL' required />
+                </div>
+                <div class='form-group'>
+                    <input class='form-control' type="textarea" name='description' placeholder='Description' />
+                </div>
+                <div class='form-group'>
+                    <button class='btn btn-lg btn-primary btn-block'>Submit!</button>
+                </div>
+            </form>
+            <a href='/articles'>Go Back</a>
+        </div>
+    </div> -->
+</div>
+<% include ../partials/footer %>

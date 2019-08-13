@@ -1,0 +1,20 @@
+<% include ../views/partials/header %>
+<div class='container'>
+    <h1>Konsultasi</h1>
+    <p class='tj'>Ajukan pertanyaan anda, ahli akan menjawab pertanyaan anda.</p>
+    <hr>
+    <div class='col-xs-12'>
+        <div id='mario-chat'>
+            <div id='chat-window'>
+                <div id='output'></div>
+                <div id='feedback'></div>
+            </div>
+            <input id='handle' type="text" placeholder="Nama">
+            <input id='message' type='text' placeholder='Pertanyaan'>
+            <button class='btn-chat' id='send'>Send</button>
+        </div>
+    </div>
+</div>
+<script src='./chat.js'></script>
+
+<% include ../views/partials/footer %>
